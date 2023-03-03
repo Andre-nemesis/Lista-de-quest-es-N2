@@ -1,10 +1,4 @@
-#include <stdio.h>
-void troca (int *a,int *b) {
-	*a = *b + *a;
-	*b = *a - *b;
-	*a = *a - *b;
-}
-
+##include <stdio.h>
 
 int main () {
 	int N1,N2;
@@ -14,9 +8,15 @@ int main () {
 	printf("Digite o segundo valor: ");
 	scanf("%d",&N2);
 	
-	troca(&N1,&N2);
+	int *a = &N1,*b = &N2;
 	
-	printf("Valores trocados: N1 = %d\tN2 = %d",N1,N2);
+	*a = *b + *a;
+	*b = *a - *b;
+	*a = *a - *b;
+	
+	printf("\n");
+	
+	printf("Valores trocados: N1 = %d\tN2 = %d",*a,*b);
 	
 	return 0;
 }
