@@ -15,8 +15,6 @@ int main() {
 	for (int i = 0; i < tam ; i++) {
 		if (point[i] == 'a' || point[i] == 'e' || point[i] == 'i' || point[i] == 'o' || point[i] == 'u' || point[i] == 'A' || point[i] == 'E' || point[i] == 'I' || point[i] == 'O' || point[i] == 'U') {}
 		else printf("%c", *(point + i));
-		
-		if (point[i] = '\0') break;
 	}
 	
 	return 0;
