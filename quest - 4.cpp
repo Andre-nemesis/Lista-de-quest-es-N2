@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main () {
 	int tamV;
@@ -6,7 +7,7 @@ int main () {
 	printf("Digite um numero para ser o tamanho do array: ");
 	scanf("%d",&tamV);
 	
-	int ar[tamV];
+	int *ar = (int*) malloc(tamV * sizeof(int));
 	
 	printf("\n");
 	
@@ -16,13 +17,13 @@ int main () {
 		scanf("%d",&ar[i]);
 	}
 	
-	int *point = ar;
-	
 	printf("\n");
 	
 	for(int i = tamV; i > 0;i--) {
-		printf("%d valor: %d\n",i,*(point + i - 1));
+		printf("%d valor: %d\n",i,*(ar + i - 1));
 	}
+	
+	free(ar);
 	
 	return 0;
 }
